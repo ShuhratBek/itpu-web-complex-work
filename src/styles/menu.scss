@@ -1,0 +1,95 @@
+.menu {
+  display: flex;
+  width: 100%;
+  height: 90px;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  color: $color-white;
+
+  &__brand {
+    @include font-size(20px);
+
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    line-height: 16px;
+    text-align: left;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: row;
+    list-style-type: none;
+
+    &__item {
+      overflow: hidden;
+      margin: 0 1rem;
+
+      a {
+        @include font-size(14px);
+        display: block;
+        border-bottom: 2px solid transparent;
+        color: $color-white;
+        font-weight: 400;
+        letter-spacing: 0.2em;
+        line-height: 16px;
+        text-align: left;
+        text-decoration: none;
+        text-transform: uppercase;
+
+        &:hover {
+          border-bottom: 2px solid $color-white;
+        }
+      }
+    }
+  }
+
+  &__button-container {
+    display: none;
+  }
+
+  &__button,
+  &__button::before,
+  &__button::after {
+    position: absolute;
+    display: block;
+    width: 30px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: $color-white;
+    transition: transform 400ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+
+  &__button::before {
+    margin-top: -8px;
+    content: '';
+  }
+
+  &__button::after {
+    margin-top: 8px;
+    content: '';
+  }
+
+  &__space {
+    width: 100px;
+  }
+
+  #menu-toggle {
+    display: none;
+  }
+
+  #menu-toggle:checked + &__button-container &__button {
+    background: rgba(255, 255, 255, 0%);
+
+    &::before {
+      margin-top: 0;
+      transform: rotate(405deg);
+    }
+
+    &::after {
+      margin-top: 0;
+      transform: rotate(-405deg);
+    }
+  }
+}

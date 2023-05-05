@@ -1,0 +1,92 @@
+@import 'variables';
+@import 'functions';
+
+// Responsive
+@mixin screen($size, $type: max, $pixels: $breakpoint-mobile) {
+  @if $size == 'mobile' {
+    @media screen and ($type + -width: $breakpoint-mobile) {
+      @content;
+    }
+  } @else if $size == 'tablet' {
+    @media screen and ($type + -width: $breakpoint-tablet) {
+      @content;
+    }
+  } @else if $size == 'desktop' {
+    @media screen and ($type + -width: $breakpoint-desktop) {
+      @content;
+    }
+  } @else if $size == 'large-desktop' {
+    @media screen and ($type + -width: $breakpoint-large-desktop) {
+      @content;
+    }
+  } @else if $size == 'custom' {
+    @media screen and ($type + -width: $pixels + px) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+// Font
+// This mixin also creates a pixel fallback for browsers that don’t support rem (IE8 and below)
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculate-rem($size);
+}
+
+@mixin font(
+  $font-name: inherit,
+  $weight: normal,
+  $font-style: normal,
+  $line-height: normal,
+  $letter-spacing: normal
+) {
+  font-family: $font-name;
+  font-style: $font-style;
+  font-weight: $weight;
+  letter-spacing: $letter-spacing;
+  line-height: $line-height;
+}
+
+// Animation
+@mixin keyframes($animation-name) {
+  // foo
+  @keyframes #{ $animation-name } {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+@mixin animation($str) {
+  animation: #{$str};
+  animation: #{$str};
+  animation: #{$str};
+  animation: #{$str};
+  animation: #{$str};
+}
+
+//Padding mixin
+@mixin padding($top, $right, $bottom, $left) {
+  padding-top: $top;
+  padding-right: $right;
+  padding-bottom: $bottom;
+  padding-left: $left;
+}
+//Margin mixin
+@mixin margin($top, $right, $bottom, $left) {
+  margin-top: $top;
+  margin-right: $right;
+  margin-bottom: $bottom;
+  margin-left: $left;
+}

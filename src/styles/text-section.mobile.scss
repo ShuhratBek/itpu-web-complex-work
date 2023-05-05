@@ -1,0 +1,23 @@
+.text-section {
+  @include screen(tablet) {
+    @include padding(66px, 50px, 105px, 50px);
+  }
+
+  @include screen(mobile) {
+    padding: 66px 27px 120px;
+
+    &__title {
+      margin-bottom: 50px;
+    }
+
+    &__description {
+      padding: 0;
+    }
+
+    &__container {
+      margin-bottom: 55px;
+      grid-template-columns: auto;
+      row-gap: 24px;
+    }
+  }
+}

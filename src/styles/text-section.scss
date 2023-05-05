@@ -1,0 +1,56 @@
+.text-section {
+  @include padding(66px, 150px, 105px, 150px);
+  background: #eee;
+  color: #666;
+  text-align: center;
+
+  &__title {
+    margin-top: 0;
+    margin-bottom: 30px;
+    color: #464547;
+  }
+
+  &__description {
+    @include font-size(24px);
+    padding: 0 200px;
+    margin-top: 0;
+    margin-bottom: 40px;
+
+    line-height: $base-line-height + 10;
+    text-align: center;
+  }
+
+  &__container {
+    display: grid;
+    align-content: center;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    column-gap: 80px;
+    grid-template-columns: auto auto;
+    justify-items: start;
+    letter-spacing: 0;
+    text-align: left;
+  }
+
+  &__read-more-btn {
+    @include font($primary-font-family, 400, null, 26px, 0.1em);
+    @include font-size(14px);
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 18px;
+    background: #55c2d8;
+    color: $color-white;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    transform-origin: left top;
+    transition: 0.7s;
+    will-change: transform;
+
+    &:hover {
+      transform: rotate(15deg);
+      transition: 0.7s;
+    }
+  }
+}

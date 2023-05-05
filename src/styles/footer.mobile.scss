@@ -1,0 +1,32 @@
+@import 'kit/mixins';
+
+.footer {
+  @include screen(tablet) {
+    @include padding(40px, 50px, 75px, 50px);
+  }
+
+  @include screen(mobile) {
+    @include padding(55px, 27px, 75px, 27px);
+    grid-template-columns: unset;
+    justify-items: center;
+    text-align: center;
+
+    &__brand {
+      margin-bottom: 30px;
+
+      &-logo {
+        height: 20px;
+        margin-right: 10px;
+        vertical-align: middle;
+      }
+    }
+
+    &__contacts {
+      margin-bottom: 15px;
+
+      &-address {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}

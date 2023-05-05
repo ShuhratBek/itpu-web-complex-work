@@ -1,0 +1,52 @@
+@import 'kit/variables';
+@import 'kit/functions';
+@import 'kit/mixins';
+@import 'footer';
+@import 'footer.mobile';
+@import 'text-section';
+@import 'text-section.mobile';
+@import 'video-section';
+@import 'video-section.mobile';
+@import 'header';
+@import 'header.mobile';
+@import 'menu';
+@import 'menu.mobile';
+
+/* Reset */
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* Global styles */
+
+body {
+  @include font(
+    $base-font-family,
+    $base-font-weight,
+    null,
+    $base-line-height,
+    $base-letter-spacing
+  );
+  @include font-size($base-font-size);
+  padding: 0;
+
+  margin: 0;
+  text-align: left;
+}
+
+h1,
+h2 {
+  @include font(
+    $primary-font-family,
+    $primary-font-weight,
+    null,
+    $primary-line-height,
+    $primary-letter-spacing
+  );
+  @include font-size($primary-font-size);
+
+  text-align: center;
+}
